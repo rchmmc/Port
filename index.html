@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thiyz Design | Portofolio</title>
 
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
     <!-- Meta Sosial -->
     <meta property="og:title" content="Thiyz Design | Portofolio" />
     <meta property="og:description" content="Desain yang kece tapi tetap fungsional. Lihat karya-karya Thiyz di sini!" />
@@ -16,46 +27,86 @@
     <meta name="twitter:description" content="Desain yang kece tapi tetap fungsional. Lihat karya-karya Thiyz di sini!" />
     <meta name="twitter:image" content="https://my-port-delta-ashy.vercel.app/nav.jpeg" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      @media (max-width: 320px) {
+        html {
+          font-size: 14px;
+        }
+
+        section {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        h1 {
+          font-size: 1.75rem;
+        }
+
+        h2 {
+          font-size: 1.25rem;
+        }
+
+        p {
+          font-size: 0.875rem;
+        }
+
+        nav ul li {
+          margin-right: 0.5rem;
+        }
+
+        #projects .grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .rounded-lg {
+          border-radius: 0.75rem;
+        }
+
+        .shadow-md {
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .py-20 {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .px-6 {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
       }
     </style>
   </head>
 
-  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+  <body class="bg-white text-gray-900">
     <!-- Navbar -->
-    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-lg transition-colors duration-300">
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto sticky top-0 z-10 bg-white shadow-lg">
       <div class="flex items-center space-x-3">
         <img src="nav.jpeg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-purple-700" />
-        <span class="font-semibold text-sm tracking-wide dark:text-white">Thiyz Design.</span>
+        <span class="font-semibold text-sm tracking-wide text-gray-900">Thiyz Design.</span>
       </div>
-      <ul class="hidden md:flex space-x-10 text-xs font-semibold tracking-wide">
-        <li><a href="#home" class="hover:underline dark:text-white">BERANDA</a></li>
-        <li><a href="#about" class="hover:underline dark:text-white">TENTANG</a></li>
-        <li><a href="#projects" class="hover:underline dark:text-white">PROYEK</a></li>
-        <li><a href="#contact" class="hover:underline dark:text-white">KONTAK</a></li>
+      <ul class="hidden md:flex space-x-10 text-xs font-semibold tracking-wide text-gray-900">
+        <li><a href="#home" class="hover:underline">BERANDA</a></li>
+        <li><a href="#about" class="hover:underline">TENTANG</a></li>
+        <li><a href="#projects" class="hover:underline">PROYEK</a></li>
+        <li><a href="#contact" class="hover:underline">KONTAK</a></li>
       </ul>
       <div class="flex items-center space-x-4">
-        <button id="toggle-button" class="text-xl hover:text-purple-500 dark:text-white">
-          <i class="fas fa-moon block dark:hidden"></i>
-          <i class="fas fa-sun hidden dark:block"></i>
-        </button>
         <div class="md:hidden" id="hamburger-icon">
-          <i class="fas fa-bars text-xl text-black dark:text-white" onclick="toggleMenu()"></i>
+          <i class="fas fa-bars text-xl text-gray-900" onclick="toggleMenu()"></i>
         </div>
       </div>
-      <div class="md:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-800 shadow-lg z-10 hidden transition-colors duration-300" id="mobile-menu">
-        <ul class="flex flex-col space-y-4 px-6 py-4">
-          <li><a href="#home" class="hover:underline dark:text-white">BERANDA</a></li>
-          <li><a href="#about" class="hover:underline dark:text-white">TENTANG</a></li>
-          <li><a href="#projects" class="hover:underline dark:text-white">PROYEK</a></li>
-          <li><a href="#contact" class="hover:underline dark:text-white">KONTAK</a></li>
+      <div class="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg z-10 hidden" id="mobile-menu">
+        <ul class="flex flex-col space-y-4 px-6 py-4 text-gray-900">
+          <li><a href="#home" class="hover:underline">BERANDA</a></li>
+          <li><a href="#about" class="hover:underline">TENTANG</a></li>
+          <li><a href="#projects" class="hover:underline">PROYEK</a></li>
+          <li><a href="#contact" class="hover:underline">KONTAK</a></li>
         </ul>
       </div>
     </nav>
@@ -77,7 +128,7 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="bg-white dark:bg-gray-800 py-20 px-6 sm:px-10 lg:px-12 transition-colors duration-300" data-aos="fade-up">
+    <section id="about" class="bg-white py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
       <div class="max-w-screen-xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase">Tentang Saya</h2>
         <p class="text-base max-w-2xl mx-auto mb-8">
@@ -87,19 +138,19 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="bg-white dark:bg-gray-800 py-20 px-6 sm:px-10 lg:px-12 transition-colors duration-300" data-aos="fade-up">
+    <section id="projects" class="bg-white py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
       <div class="max-w-screen-xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase">Proyek Unggulan</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-left transition-colors duration-300">
+          <div class="bg-white p-6 rounded-lg shadow-md text-left">
             <h3 class="font-bold text-lg mb-2">Proyek Satu</h3>
             <p class="text-sm">Desain modern dan minimalis, dibangun dengan HTML, CSS, dan sedikit JS.</p>
           </div>
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-left transition-colors duration-300">
+          <div class="bg-white p-6 rounded-lg shadow-md text-left">
             <h3 class="font-bold text-lg mb-2">Proyek Dua</h3>
             <p class="text-sm">Responsif di semua device. Cocok buat brand yang mau tampil beda.</p>
           </div>
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-left transition-colors duration-300">
+          <div class="bg-white p-6 rounded-lg shadow-md text-left">
             <h3 class="font-bold text-lg mb-2">Proyek Tiga</h3>
             <p class="text-sm">Lebih teknikal—backend-nya pakai Node.js dan API.</p>
           </div>
@@ -108,7 +159,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
+    <section id="contact" class="bg-white py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
       <div class="max-w-screen-xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase">Kontak</h2>
         <p class="text-base mb-8">
@@ -119,13 +170,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-800 py-12 px-6 sm:px-10 lg:px-12 mt-16 transition-colors duration-300">
+    <footer class="bg-white py-12 px-6 sm:px-10 lg:px-12 mt-16">
       <div class="max-w-screen-xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
-        <p class="text-sm text-gray-600 dark:text-gray-400 text-center sm:text-left">&copy; 2025 Thiyz. All rights reserved.</p>
+        <p class="text-sm text-gray-600 text-center sm:text-left">&copy; 2025 Thiyz. All rights reserved.</p>
         <div class="flex space-x-4">
-          <a href="https://wa.me/6289604097637" target="_blank" class="hover:text-green-600">
-            <i class="fab fa-whatsapp text-xl"></i>
-          </a>
+          <a href="https://wa.me/6289604097637" target="_blank" class="hover:text-green-600"><i class="fab fa-whatsapp text-xl"></i></a>
           <a href="#" class="hover:text-purple-500"><i class="fab fa-linkedin text-xl"></i></a>
           <a href="#" class="hover:text-purple-500"><i class="fab fa-twitter text-xl"></i></a>
           <a href="#" class="hover:text-purple-500"><i class="fab fa-github text-xl"></i></a>
@@ -137,27 +186,11 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+
       function toggleMenu() {
         const mobileMenu = document.getElementById("mobile-menu");
         mobileMenu.classList.toggle("hidden");
       }
-
-      // Dark Mode Toggle
-      const toggleButton = document.getElementById('toggle-button');
-      const html = document.documentElement;
-
-      if (localStorage.getItem('darkMode') === 'enabled') {
-        html.classList.add('dark');
-      }
-
-      toggleButton.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        if (html.classList.contains('dark')) {
-          localStorage.setItem('darkMode', 'enabled');
-        } else {
-          localStorage.removeItem('darkMode');
-        }
-      });
     </script>
   </body>
 </html>
