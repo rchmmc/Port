@@ -3,172 +3,190 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thiyz Design | Portofolio</title>
+    <title>Rachmad | Portofolio Fresh Graduate</title>
 
     <!-- Tailwind Config -->
     <script>
+      // Configure Tailwind CSS for dark mode
       tailwind.config = {
-        darkMode: 'class',
+        darkMode: 'class', // Enable dark mode based on the 'dark' class
       };
     </script>
+    <!-- Link to Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Link to Google Fonts (Poppins) for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=400;700&display=swap" rel="stylesheet" />
+    <!-- Link to AOS (Animate On Scroll) for scroll animations -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
     <style>
+      /* Apply Poppins font to the entire body */
       body {
         font-family: 'Poppins', sans-serif;
       }
 
+      /* Responsive adjustments for smaller screens (max-width: 320px) */
       @media (max-width: 320px) {
         html {
-          font-size: 14px;
+          font-size: 14px; /* Slightly smaller base font size */
         }
 
         section {
-          padding-left: 1rem;
+          padding-left: 1rem; /* Adjust horizontal padding for sections */
           padding-right: 1rem;
         }
 
         h1 {
-          font-size: 1.75rem;
+          font-size: 1.75rem; /* Smaller font size for H1 */
         }
 
         h2 {
-          font-size: 1.25rem;
+          font-size: 1.25rem; /* Smaller font size for H2 */
         }
 
         p {
-          font-size: 0.875rem;
+          font-size: 0.875rem; /* Smaller font size for paragraphs */
         }
 
         nav ul li {
-          margin-right: 0.5rem;
+          margin-right: 0.5rem; /* Adjust margin for nav list items */
         }
 
         #projects .grid {
-          grid-template-columns: 1fr !important;
+          grid-template-columns: 1fr !important; /* Force single column for projects grid */
         }
 
         .rounded-lg {
-          border-radius: 0.75rem;
+          border-radius: 0.75rem; /* Standard rounded corners */
         }
 
         .shadow-md {
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Standard shadow */
         }
 
         .py-20 {
-          padding-top: 3rem;
+          padding-top: 3rem; /* Adjust vertical padding */
           padding-bottom: 3rem;
         }
 
         .px-6 {
-          padding-left: 1rem;
+          padding-left: 1rem; /* Adjust horizontal padding */
           padding-right: 1rem;
         }
       }
     </style>
   </head>
 
-  <body class="bg-white text-gray-900">
-    <!-- Navbar -->
-    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto sticky top-0 z-10 bg-white shadow-lg">
+  <!-- Body with dark theme background and text colors -->
+  <body class="bg-gray-900 text-white">
+    <!-- Navbar with dark background and lighter shadow -->
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto sticky top-0 z-10 bg-gray-800 shadow-xl">
       <div class="flex items-center space-x-3">
-        <img src="nav.jpeg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-purple-700" />
+        <!-- Logo image (updated placeholder) -->
+        <img src="https://placehold.co/40x40/6B21A8/ffffff?text=RM" alt="Logo" class="w-10 h-10 rounded-full border-2 border-purple-500" />
       </div>
       <div class="flex-grow text-center">
-        <span class="font-semibold text-sm tracking-wide text-gray-900">Thiyz Design.</span>
+        <!-- Site title (updated to Rachmad) -->
+        <span class="font-semibold text-sm tracking-wide text-white">Rachmad.</span>
       </div>
-      <ul class="hidden md:flex space-x-10 text-xs font-semibold tracking-wide text-gray-900">
-        <li><a href="#home" class="hover:underline">BERANDA</a></li>
-        <li><a href="#about" class="hover:underline">TENTANG</a></li>
-        <li><a href="#projects" class="hover:underline">PROYEK</a></li>
-        <li><a href="#contact" class="hover:underline">KONTAK</a></li>
+      <!-- Desktop navigation links -->
+      <ul class="hidden md:flex space-x-10 text-xs font-semibold tracking-wide text-white">
+        <li><a href="#home" class="hover:text-purple-300 hover:underline">BERANDA</a></li>
+        <li><a href="#about" class="hover:text-purple-300 hover:underline">TENTANG</a></li>
+        <li><a href="#projects" class="hover:text-purple-300 hover:underline">PROYEK</a></li>
+        <li><a href="#contact" class="hover:text-purple-300 hover:underline">KONTAK</a></li>
       </ul>
       <div class="flex items-center space-x-4">
+        <!-- Hamburger icon for mobile menu -->
         <div class="md:hidden" id="hamburger-icon">
-          <i class="fas fa-bars text-xl text-gray-900" onclick="toggleMenu()"></i>
+          <i class="fas fa-bars text-xl text-white" onclick="toggleMenu()"></i>
         </div>
       </div>
-      <div class="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg z-10 hidden" id="mobile-menu">
-        <ul class="flex flex-col space-y-4 px-6 py-4 text-gray-900">
-          <li><a href="#home" class="hover:underline">BERANDA</a></li>
-          <li><a href="#about" class="hover:underline">TENTANG</a></li>
-          <li><a href="#projects" class="hover:underline">PROYEK</a></li>
-          <li><a href="#contact" class="hover:underline">KONTAK</a></li>
+      <!-- Mobile menu, initially hidden -->
+      <div class="md:hidden absolute top-16 left-0 w-full bg-gray-800 shadow-lg z-10 hidden" id="mobile-menu">
+        <ul class="flex flex-col space-y-4 px-6 py-4 text-white">
+          <li><a href="#home" class="hover:text-purple-300 hover:underline" onclick="toggleMenu()">BERANDA</a></li>
+          <li><a href="#about" class="hover:text-purple-300 hover:underline" onclick="toggleMenu()">TENTANG</a></li>
+          <li><a href="#projects" class="hover:text-purple-300 hover:underline" onclick="toggleMenu()">PROYEK</a></li>
+          <li><a href="#contact" class="hover:text-purple-300 hover:underline" onclick="toggleMenu()">KONTAK</a></li>
         </ul>
       </div>
     </nav>
 
-    <!-- Hero -->
-    <section id="home" class="py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
+    <!-- Hero Section (updated content) -->
+    <section id="home" class="py-20 px-6 sm:px-10 lg:px-12 bg-gray-900" data-aos="fade-up">
       <div class="max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center lg:justify-between gap-12">
         <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
-          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Hai, Aku Thiyz!</h1>
-          <p class="text-lg leading-relaxed mb-8">
-            Aku adalah desainer yang fokus sama hasil dan detail. Suka bikin tampilan yang kece tapi tetap fungsional.
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">Hai, Aku Rachmad!</h1>
+          <p class="text-lg leading-relaxed mb-8 text-gray-300">
+            Saya adalah seorang *fresh graduate* Manajemen Perkantoran yang bersemangat dalam efisiensi dan inovasi administrasi. Siap berkontribusi dengan kemampuan organisasi dan komunikasi yang solid.
           </p>
           <a href="#projects" class="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-3 rounded-full text-sm sm:text-base">Lihat Proyek</a>
         </div>
         <div class="w-full lg:w-1/2" data-aos="fade-up">
-          <img src="nav.jpeg" alt="Hero image" class="w-full max-w-md mx-auto lg:max-w-full rounded-xl shadow-lg" />
+          <!-- Placeholder image for Hero section -->
+          <img src="https://placehold.co/600x400/374151/ffffff?text=Rachmad" alt="Hero image" class="w-full max-w-md mx-auto lg:max-w-full rounded-xl shadow-lg" />
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="bg-white py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
+    <!-- About Section (updated content) -->
+    <section id="about" class="bg-gray-900 py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
       <div class="max-w-screen-xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase">Tentang Saya</h2>
-        <p class="text-base max-w-2xl mx-auto mb-8">
-          Aku Thiyz, seorang desainer web yang berfokus pada desain antarmuka yang simpel dan efektif. Menyukai tantangan dan selalu ingin ngasih hasil terbaik.
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase text-white">Tentang Saya</h2>
+        <p class="text-base max-w-2xl mx-auto mb-8 text-gray-300">
+          Saya Rachmad, *fresh graduate* jurusan Manajemen Perkantoran yang berdedikasi tinggi terhadap pengelolaan administrasi dan operasional. Saya memiliki pengalaman praktis dalam mengoptimalkan alur kerja dan menyusun dokumentasi efektif. Pada tahun 2025, saya berhasil meraih **Juara 1 Lomba Kompetensi Siswa (LKS) tingkat Kabupaten Cilacap** di bidang Manajemen Perkantoran, yang membuktikan kemampuan saya dalam aplikasi teori dan praktik di dunia nyata.
         </p>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="bg-white py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
+    <!-- Projects Section (updated descriptions) -->
+    <section id="projects" class="bg-gray-900 py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
       <div class="max-w-screen-xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase">Proyek Unggulan</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase text-white">Proyek & Pengalaman</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-md text-left">
-            <h3 class="font-bold text-lg mb-2">Proyek Satu</h3>
-            <p class="text-sm">Desain modern dan minimalis, dibangun dengan HTML, CSS, dan sedikit JS.</p>
+          <!-- Project Card 1 -->
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md text-left border border-gray-700">
+            <h3 class="font-bold text-lg mb-2 text-white">Optimasi Dokumen Digital</h3>
+            <p class="text-sm text-gray-300">Merancang sistem pengarsipan digital untuk meningkatkan efisiensi pencarian dan manajemen dokumen, mengurangi penggunaan kertas secara signifikan.</p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md text-left">
-            <h3 class="font-bold text-lg mb-2">Proyek Dua</h3>
-            <p class="text-sm">Responsif di semua device. Cocok buat brand yang mau tampil beda.</p>
+          <!-- Project Card 2 -->
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md text-left border border-gray-700">
+            <h3 class="font-bold text-lg mb-2 text-white">Implementasi Sistem Penjadwalan</h3>
+            <p class="text-sm text-gray-300">Menerapkan dan mengelola sistem penjadwalan terpadu untuk rapat dan acara, memastikan koordinasi yang lancar antar tim.</p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md text-left">
-            <h3 class="font-bold text-lg mb-2">Proyek Tiga</h3>
-            <p class="text-sm">Lebih teknikal—backend-nya pakai Node.js dan API.</p>
+          <!-- Project Card 3 -->
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md text-left border border-gray-700">
+            <h3 class="font-bold text-lg mb-2 text-white">Laporan Kinerja Bulanan</h3>
+            <p class="text-sm text-gray-300">Penyusunan laporan kinerja administrasi bulanan yang akurat dan ringkas, memberikan dasar untuk pengambilan keputusan strategis.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="bg-white py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-900 py-20 px-6 sm:px-10 lg:px-12" data-aos="fade-up">
       <div class="max-w-screen-xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase">Kontak</h2>
-        <p class="text-base mb-8">
-          Tertarik buat kolab atau diskusi? Langsung hubungi aku!
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 uppercase text-white">Kontak</h2>
+        <p class="text-base mb-8 text-gray-300">
+          Tertarik untuk berdiskusi lebih lanjut atau kesempatan kolaborasi? Jangan ragu untuk menghubungi saya!
         </p>
-        <a href="https://wa.me/6289604097637" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full">Hubungi WhatsApp</a>
+        <a href="https://wa.me/6289604097637" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full">Hubungi WhatsApp</a>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white py-12 px-6 sm:px-10 lg:px-12 mt-16">
+    <footer class="bg-gray-800 py-12 px-6 sm:px-10 lg:px-12 mt-16 shadow-inner">
       <div class="max-w-screen-xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
-        <p class="text-sm text-gray-600 text-center sm:text-left">&copy; 2025 Thiyz. All rights reserved.</p>
+        <p class="text-sm text-gray-400 text-center sm:text-left">&copy; 2025 Rachmad. All rights reserved.</p>
         <div class="flex space-x-4">
-          <a href="https://wa.me/6289604097637" target="_blank" class="hover:text-green-600"><i class="fab fa-whatsapp text-xl"></i></a>
-          <a href="#" class="hover:text-purple-500"><i class="fab fa-linkedin text-xl"></i></a>
-          <a href="#" class="hover:text-purple-500"><i class="fab fa-twitter text-xl"></i></a>
-          <a href="#" class="hover:text-purple-500"><i class="fab fa-github text-xl"></i></a>
+          <!-- Social media icons -->
+          <a href="https://wa.me/6289604097637" target="_blank" class="text-gray-400 hover:text-green-500"><i class="fab fa-whatsapp text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-linkedin text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-twitter text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-github text-xl"></i></a>
         </div>
       </div>
     </footer>
@@ -176,12 +194,15 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+      // Initialize AOS for scroll animations
       AOS.init();
 
+      // Function to toggle mobile menu visibility
       function toggleMenu() {
         const mobileMenu = document.getElementById("mobile-menu");
         mobileMenu.classList.toggle("hidden");
       }
     </script>
   </body>
-  </html>
+</html>
+
